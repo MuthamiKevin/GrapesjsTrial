@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', function () {
+    var editor = grapesjs.init({
+        container: '#gjs', // Specify the container ID where GrapesJS will be rendered
+        // Add any additional options or configurations here
+    });
+});
+
 const editor = grapesjs.init({
     // Indicate where to init the editor. You can also pass an HTMLElement
     container: '#gjs',
