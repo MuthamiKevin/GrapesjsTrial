@@ -1,41 +1,24 @@
+// Import the GrapesJS library
 import grapesjs from 'grapesjs';
+import 'grapesjs/dist/css/grapes.min.css';
 
-document.addEventListener('DOMContentLoaded', function () {
-    var editor = grapesjs.init({
-        container: '#gjs', // Specify the container ID where GrapesJS will be rendered
-        // Add any additional options or configurations here
-    });
+// Start from the canvas
+const editor = grapesjs.init({
+  // Indicate where to init the editor
+  container: '#gjs',
+  // Get the content for the canvas directly from the element
+  fromElement: true,
+  // Size of the editor
+  height: '300px',
+  width: 'auto',
+  // Disable the storage manager for the moment
+  storageManager: false,
+  // Avoid any default panel
+  panels: { defaults: [] },
 });
 
-const editor = grapesjs.init({
-    // ...
-    blockManager: {
-      appendTo: '#blocks',
-      blocks: [
-        {
-          id: 'section', // id is mandatory
-          label: '<b>Section</b>', // You can use HTML/SVG inside labels
-          attributes: { class:'gjs-block-section' },
-          content: `<section>
-            <h1>This is a simple title</h1>
-            <div>This is just a Lorem text: Lorem ipsum dolor sit amet</div>
-          </section>`,
-        }, {
-          id: 'text',
-          label: 'Text',
-          content: '<div data-gjs-type="text">Insert your text here</div>',
-        }, {
-          id: 'image',
-          label: 'Image',
-          // Select the component once it's dropped
-          select: true,
-          // You can pass components as a JSON instead of a simple HTML string,
-          // in this case we also use a defined component type `image`
-          content: { type: 'image' },
-          // This triggers `active` event on dropped components and the `image`
-          // reacts by opening the AssetManager
-          activate: true,
-        }
-      ]
-    },
-  });s
+// Customize canvas appearance
+document.getElementById('gjs').style.border = '3px solid #444';
+document.querySelector('.gjs-cv-canvas').style.top = '0';
+document.querySelector('.gjs-cv-canvas').style.width = '100%';
+document.querySelector('.gjs-cv-canvas').style.height = '100%';
