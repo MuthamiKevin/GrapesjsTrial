@@ -1,3 +1,5 @@
+import grapesjs from 'grapesjs';
+
 document.addEventListener('DOMContentLoaded', function () {
     var editor = grapesjs.init({
         container: '#gjs', // Specify the container ID where GrapesJS will be rendered

@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "html-script test",
+    "start": "html-script start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "grapesjs": "^0.21.10"
+    "grapes": "^1.0.0-0",
+    "grapesjs": "^0.21.10",
+    "js": "^0.1.0"
   }
 }
