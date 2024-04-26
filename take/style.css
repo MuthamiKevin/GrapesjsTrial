@@ -1,5 +1,5 @@
 /* Let's highlight canvas boundaries */
-#gjs {
+#container {
     border: 3px solid #444;
   }
   
