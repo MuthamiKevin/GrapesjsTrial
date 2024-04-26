@@ -9,7 +9,7 @@ const editor = grapesjs.init({
   // Get the content for the canvas directly from the element
   fromElement: true,
   // Size of the editor
-  height: '300px',
+  height: '900px',
   width: 'auto',
   // Disable the storage manager for the moment
   storageManager: false,
