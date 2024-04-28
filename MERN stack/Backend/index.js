@@ -36,6 +36,15 @@ app.post('/books', async (req, res) => {
     }
 });
 
+app.get('/books', async(req, res) => {
+    try{
+
+    }catch(error){
+        console.log(error.message);
+        res.status(500).send({message: error.message});
+    }
+
+});
 
 mongoose
     .connect(mongoDBURL)
