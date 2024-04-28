@@ -40,7 +40,11 @@ app.post('/books', async (req, res) => {
 app.get('/books', async(req, res) => {
     try{
         const book = await book.find({});
-        return res.status(200).json(book);
+        return res.status(200).json(
+            count, books.length,
+            data, books,
+
+        );
     }catch(error){
         console.log(error.message);
         res.status(500).send({message: error.message});
