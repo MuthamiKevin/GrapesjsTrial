@@ -4,19 +4,13 @@ import { PORT, mongoDBURL } from "./config.js";
 
 const app = express();
 
+app.use(express.json());
+
 app.get('/', (req, res) => {
     console.group(req)
     return res.status(234).send("welcome to our first app friends")
 });
 
-
-app.post('/books', async  (req, res) => {
-    try{
-
-    }catch(error){
-    console.log(error.message);
-    res.status(500).send({message:error.message}); }
-});
 
 app.post('/books', async (req, res) => {
     try{    
