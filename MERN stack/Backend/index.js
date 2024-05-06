@@ -1,51 +1,17 @@
-import express from "express";
-
+const express = require('express');
+const path = require('path');
 const app = express();
 
-app.use(express.json());
+// Serve GrapeJS files from node_modules
+app.use('/grapejs', express.static(path.join(__dirname, 'node_modules', 'grapejs')));
 
+// Define route for the homepage
 app.get('/', (req, res) => {
-    console.group(req)
-    return res.status(234).send("welcome")
+  res.sendFile(path.join(__dirname, 'views', 'index.html')); // Assuming your HTML template is in the "views" directory
 });
 
-
-app.post('/books', async (req, res) => {
-    try{    
-        if(
-            !req.body.title ||
-            !req.body.author ||
-            !req.body.publisherYear
-        ) {
-            return res.status(400).send({message: 'Send all the required fields: title, title, author, publishYear',});
-        } 
-        const  newBooks = {
-            title:request.body.title,
-            author: request.body.author,
-            publisherYear: request.body.publisherYear,
-
-        }; 
-        const book = await book.create(newBook);
-        return res.status(201).send(book);
-
-    }catch (error){
-        console.log(error.message);
-        res.status(500).send({message: error.message});
-
-    }
-});
-
-app.get('/books', async(req, res) => {
-    try{
-        const book = await book.find({});
-        return res.status(200).json(
-            count, books.length,
-            data, books,
-
-        );
-    }catch(error){
-        console.log(error.message);
-        res.status(500).send({message: error.message});
-    }
-
+// Start the server
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
