@@ -10,6 +10,9 @@
   "description": "",
   "dependencies": {
     "express": "^4.19.2",
-    "grapesjs": "^0.21.10"
+    "express-handlebars": "^7.1.2",
+    "grapesjs": "^0.21.10",
+    "handlebars": "^4.7.8",
+    "nodejs": "^0.0.0"
   }
 }
