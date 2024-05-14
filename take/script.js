@@ -8,9 +8,49 @@ const editor = grapesjs.init({
     height: '900px',
     width: 'auto',
     // Disable the storage manager for the moment
-    storageManager: false,
-    // Avoid any default panel
-    panels: { defaults: [] },
+   
+    
   });
-const htmlCode = editor.getHtml();
-console.log(htmlCode); // Output the HTML code to the console
+  editor.Panels.addPanel({
+    id: 'panel-top',
+    el: '.panel__top',
+  });
+  editor.Panels.addPanel({
+    id: 'basic-actions',
+    el: '.panel__basic-actions',
+    buttons: [
+      {
+        id: 'visibility',
+        active: true, // active by default
+        className: 'btn-toggle-borders',
+        label: '<u>B</u>',
+        command: 'sw-visibility', // Built-in command
+      }, 
+     {
+        id: 'save-db',
+        className: 'fa fa-floppy icon-floppy',
+        command: 'save-db',
+        attributes: {
+            title: 'Save DB'
+        }
+      }, {
+        id: 'export',
+        className: 'btn-open-export',
+        label: 'Exp',
+        command: 'export-template',
+        context: 'export-template', // For grouping context of buttons from the same panel
+      }, {
+        id: 'show-json',
+        className: 'btn-show-json',
+        label: 'JSON',
+        context: 'show-json',
+        command(editor) {
+          editor.Modal.setTitle('Components JSON')
+            .setContent(`<textarea style="width:100%; height: 250px;">
+              ${JSON.stringify(editor.getComponents())}
+            </textarea>`)
+            .open();
+        },
+      }
+    ],
+  });
