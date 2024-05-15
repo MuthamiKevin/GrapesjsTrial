@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="//unpkg.com/grapesjs/dist/css/grapes.min.css">
-    <script src="//unpkg.com/grapesjs"></script>
-    <!-- Include your custom CSS if needed -->
-    <link rel="stylesheet" href="style.css">
+    <title>GrapesJS Editor</title>
+    <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Your website content here -->
-    <div class="panel__top">
-        <div class="panel__basic-actions"></div>
+    <div id="gjs">
+        <div class="row pt-20">
+            <div class="col-md-6">
+                <h1 class="text-purple">Welcome to this website's new template!</h1>
+                <p class="lead">This is where you can add your content, such as text, images, videos, etc.</p>
+                <img src="/images/logo.png" alt="Example Image" class="img-fluid float-md-end mt-3 ms-md-3">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <h2>About Kavenda</h2>
+                <p class="lead">Kavenda is a web design and development company dedicated to creating unique and innovative websites for our clients. We specialize in crafting customized solutions that meet the specific needs and goals of each client.</p>
+                <p class="lead">With our team of experienced designers and developers, we strive to deliver exceptional results that exceed expectations. Whether you need a simple portfolio website or a complex e-commerce platform, we have the expertise to bring your vision to life.</p>
+                <p class="lead">At Kavenda, we understand the importance of a strong online presence in today's digital world. That's why we work closely with our clients to understand their brand identity, target audience, and business objectives, ensuring that every website we create is tailored to their unique requirements.</p>
+                <p class="lead">Let us help you stand out from the crowd with a stunning and functional website that showcases your brand and drives results. Contact us today to discuss your project!</p>
+            </div>
+        </div>
     </div>
-    <div id="container">
-        <!-- Content editable by GrapesJS -->
-        <h1>Hello World Component!</h1>
-        <h2>i ama kevin</h2>
-   
-    <!-- Include GrapesJS JavaScript -->
-
-    <!-- Include your custom JavaScript -->
+    <button id="previewBtn">Preview Page</button>
+    <div id="previewContainer"></div>
+    
+    <script src="https://unpkg.com/grapesjs"></script>
     <script src="script.js"></script>
 </body>
 </html>
