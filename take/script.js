@@ -1,6 +1,12 @@
 const editor = grapesjs.init({
     // Indicate where to init the editor. You can also pass an HTMLElement
     container: '#gjs',
+    plugins: ["gjs-preset-newsletter"],
+  pluginsOpts: {
+    "gjs-preset-newsletter": {
+      inlineCss: false,
+    },
+  },
     // Get the content for the canvas directly from the element
     // As an alternative we could use: `components: '<h1>Hello World Component!</h1>'`,
     fromElement: true,
